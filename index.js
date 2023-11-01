@@ -6,7 +6,23 @@ const returnFirstTwoDrivers = function(drivers) {
 };
 
 const returnLastTwoDrivers = function(drivers) {
-return drivers.slice([drivers.length-2]);
+return drivers.slice(-2);
 };
 
-let selectingDrivers = [returnFirstTwoDrivers(), returnLastTwoDrivers()];
+const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
+
+function createFareMultiplier(integer) {
+    return function(fare) {
+        return integer * fare;
+    };
+};
+
+const fareDoubler = createFareMultiplier(2);
+
+const fareTripler = createFareMultiplier(3);
+
+function selectDifferentDrivers(array, cb) {
+    return cb(array);
+};
+
+//const selectingDrivers = (drivers, driversFunction) => driversFunction(drivers)
